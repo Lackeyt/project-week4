@@ -1,8 +1,8 @@
-#  _{title}_
+#  _Pizza Parlor_
 
-#### _{brief desc}_
-##### __Created:__ 5/29/2020
-##### __Last Updated:__ 6/3/2020 
+#### _Lets a user create and order a pizza_
+##### __Created:__ 6/19/2020
+##### __Last Updated:__ 6/19/2020 
 ##### By _**Tyson Lackey**_  
 
 ## Description
@@ -13,10 +13,10 @@ _{detailed desc}_
 
 | Spec| Example input | Example Output
 | ----------- | ----------- | ----------- |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
+| User selects size of the pizza, size listed in output | `[x] Small` | "small" |
+| User selects any number of toppings, they are listed in the output | `[x] Olives, [x] Pepperoni, [x] Sausage, [x] Bacon` | "Olives, Pepperoni, Sausage, Bacon |
+| Small pizzas cost $10, medium cost $15, large cost $20 | `[x] Small` | $10 |
+| Additional toppings are each $1 | `[x] Small` & `[x] Sausage, [x] Bacon` | $12 |
 | Behavior | input | output |
 | Behavior | input | output |
 | Behavior | input | output |
@@ -35,8 +35,8 @@ _{detailed desc}_
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open via Bash/GitBash:
 
 1. Clone this repository onto your computer:
-    "git clone {github repo URL}"
-2. Navigate into the "{project name}" directory in Visual Studio Code or preferred text editor:
+    "git clone https://github.com/Lackeyt/project-week4"
+2. Navigate into the "project-week4" directory in Visual Studio Code or preferred text editor:
 3. Open the project
     "code ."
 3. Open index.html in your browser:
