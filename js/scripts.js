@@ -18,37 +18,36 @@
     switch(this.size){
       case "Small":
         price = 10
-        price += this.toppingsPriceCalc()
-        return price
+        break;
       case "Medium":
         price = 15
-        price += this.toppingsPriceCalc()
-        return price
+        break;
       case "Large":
-        price = 20
-        price += this.toppingsPriceCalc()
-        return price
+        price = 20;
+        break;
     };
+    price += this.toppingsPriceCalc()
+    return price
   };
 
+  
   function toppings(){
-
+    let pizzaToppings = []
+    $("input:checkbox[name=topping]:checked").each(function(i){
+      pizzaToppings[i] = $(this).val();
+    })
+    return pizzaToppings
   }
 
-  //User Interface
+  
 $(document).ready(function() {
   $("#pizzaOptions").submit(function(){
     event.preventDefault()
     let pizzaSize = $("input:radio[name=size]:checked").val()
-    let pizzaToppings = []
-      $("input:checkbox[name=topping]:checked").each(function(i){
-        pizzaToppings[i] = $(this).val();
-      })
-    
+    let pizzaToppings = toppings()
     let pizzaOrder = new Pizza(pizzaSize, pizzaToppings)
     let price = pizzaOrder.priceCalc()
 
-    console.log(pizzaOrder)
-    console.log(price)
+    $("#pizzaOptions").hide()
   })
 })

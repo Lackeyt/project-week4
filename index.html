@@ -11,42 +11,82 @@
 </head>
 <body>
   <div class="container-fluid">
-    <h1 class="jumbotron">Pizza Parlor</h1>
-    <div class="sizeButtons">
-      <form id="pizzaOptions">
-        <input type="radio" id="small" name="size" value="Small">
-        <label for="small">Small</label>
-        <input type="radio" id="medium" name="size" value="Medium">
-        <label for="medium">Medium</label>
-        <input type="radio" id="large" name="size" value="Large">
-        <label for="large">Large</label><br>
-
-        <input type="checkbox" value="pepperoni" name="topping">
-        <label for="pepperoni">Pepperoni</label>
-        <input type="checkbox" value="olives" name="topping">
-        <label for="olives">Olives</label>
-        <input type="checkbox" value="chicken" name="topping">
-        <label for="chicken">Chicken</label>
-        <input type="checkbox" value="anchovies" name="topping">
-        <label for="anchovies">Anchovies</label>
-        <input type="checkbox" value="sausage" name="topping">
-        <label for="sausage">Sausage</label>
-        <input type="checkbox" value="bacon" name="topping">
-        <label for="bacon">Bacon</label>
-        <input type="checkbox" value="mushroom" name="topping">
-        <label for="mushroom">Mushroom</label>
-        <input type="checkbox" value="greenPepper" name="topping">
-        <label for="greenPepper">Green Pepper</label>
-        <input type="checkbox" value="onion" name="topping">
-        <label for="onion">Onion</label>
-        <input type="checkbox" value="feta" name="topping">
-        <label for="feta">Feta</label>
-        <input type="checkbox" value="spinach" name="topping">
-        <label for="spinach">Spinach</label>
-
-        <button type="submit">Proceed to Checkout</button>
-      </form>
-    </div>
+    <h1 class="jumbotron">Tyson's Pizza Parlor</h1>
+    <form id="pizzaOptions" class="form-group well">
+      <ul class="flex-outer">
+        <h3>Size:</h3>
+        <li>
+          <ul>
+            <li>
+              <input type="radio" id="small" name="size" value="Small">&nbsp;
+              <label for="small">Small ($10)</label>
+            </li>
+            <li>
+              <input type="radio" id="medium" name="size" value="Medium">&nbsp;
+              <label for="medium">Medium ($15)</label>
+            </li>
+            <li>
+              <input type="radio" id="large" name="size" value="Large">&nbsp;
+              <label for="large">Large ($20)</label><br>
+            </li>
+          </ul>
+        </li>
+        <h3>Toppings (+$1 each):</h3>
+        <li>
+            <ul class="flex-inner">
+              <li>
+                <input type="checkbox" id="pepperoni" value="Pepperoni" name="topping">&nbsp;
+                <label for="pepperoni">Pepperoni</label>
+              </li>
+              <li>
+                <input type="checkbox" id="olives" value="Olives" name="topping">&nbsp;
+                <label for="olives">Olives</label>
+              </li>
+              <li>
+                <input type="checkbox" id="chicken" value="Chicken" name="topping">&nbsp;
+                <label for="chicken">Chicken</label>
+              </li>
+              <li>
+                <input type="checkbox" id="anchovies" value="Anchovies" name="topping">&nbsp;
+                <label for="anchovies">Anchovies</label>
+              </li>
+              <li>
+                <input type="checkbox" id="sausage" value="Sausage" name="topping">&nbsp;
+                <label for="sausage">Sausage</label>
+              </li>
+              <li>
+                <input type="checkbox" id="bacon" value="Bacon" name="topping">&nbsp;
+                <label for="bacon">Bacon</label>
+              </li>
+              <li>
+                <input type="checkbox" id="mushroom" value="Mushroom" name="topping">&nbsp;
+                <label for="mushroom">Mushroom</label>
+              </li>
+              <li>
+                <input type="checkbox" id="greenPepper" value="Green Pepper" name="topping">&nbsp;
+                <label for="greenPepper">Green Pepper</label>
+              </li>
+              <li>
+                <input type="checkbox" id="onion" value="Onion" name="topping">&nbsp;
+                <label for="onion">Onion</label>
+              </li>
+              <li>
+                <input type="checkbox" id="feta" value="Feta" name="topping">&nbsp;
+                <label for="feta">Feta</label>
+              </li>
+              <li>
+                <input type="checkbox" id="spinach" value="Spinach" name="topping">&nbsp;
+                <label for="spinach">Spinach</label>
+              </li>
+              <li>
+                <input type="checkbox" id="garlic" value="Roasted Garlic" name="topping">&nbsp;
+                <label for="garlic">Roasted Garlic</label>
+              </li>
+            </ul>
+        </li> <br>
+        <button type="submit" class="btn btn-primary">Proceed to Checkout</button>
+      </ul>
+    </form>
   </div>
 </body>
 </html>

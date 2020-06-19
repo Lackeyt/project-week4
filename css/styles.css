@@ -1,0 +1,32 @@
+.jumbotron{
+  text-align: center;
+}
+
+.flex-outer, 
+.flex-inner{
+  list-style-type: none;
+  padding: 0;
+}
+
+.flex-outer > li > ul{
+  padding: 0;
+}
+
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-inner {
+  justify-content: space-between;
+}
+
+.flex-outer > li > ul > li,
+.flex-inner > li {
+  flex: 3 0 200px;
+  padding: 0;
+}
+
+
+
