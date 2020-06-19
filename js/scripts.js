@@ -40,10 +40,20 @@
     return pizzaToppings
   }
 
-  function showToppings(pizzaToppings){
+  function showCheckoutToppings(pizzaToppings){
     pizzaToppings.forEach(
       element => $(".toppingsChoice").append(`<li>${element}</li>`)
     )
+  }
+
+  function orderConfirmedToppings(pizzaOrder){
+    let output
+    if (pizzaOrder.toppings.length === 0) {
+      output = "nothing but sadness"
+    } else {
+      output = pizzaOrder.toppings.join(", ")
+    }
+    return output
   }
   
 $(document).ready(function() {
@@ -51,11 +61,12 @@ $(document).ready(function() {
     event.preventDefault()
     let pizzaOrder = new Pizza($("input:radio[name=size]:checked").val(), toppings())
     let price = pizzaOrder.priceCalc()
-
     $(".sizeChoice").append(`<li>${pizzaOrder.size} ($${price[0]})</li>`)
     $("#toppings").append(` ($${pizzaOrder.toppingsPriceCalc()})`)
-    showToppings(pizzaOrder.toppings)
+    showCheckoutToppings(pizzaOrder.toppings)
     $("#total").append(` $${price[1]}`)
+    $(".orderSize").text(pizzaOrder.size)
+    $(".orderToppings").text(orderConfirmedToppings(pizzaOrder))
     $("#checkout").toggle()
     $("#pizzaOptions").toggle()
   })
@@ -74,5 +85,9 @@ $(document).ready(function() {
     event.preventDefault()
     $("#checkout").hide()
     $("#orderConfirmed").show()
+  })
+
+  $("#startOver").click(function(){
+    location.reload()
   })
 })

@@ -43,6 +43,10 @@
   font-weight: bold;
 }
 
+#orderConfirmed {
+  display: none;
+}
+
 
 
 
