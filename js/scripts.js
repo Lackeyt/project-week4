@@ -5,18 +5,9 @@
     this.toppings = toppings;
   };
 
-  
-  Pizza.prototype.toppingsPriceCalc = function(){
-    let toppingsPrice = 0
-    for (i=0; i < this.toppings.length; i++){
-      toppingsPrice +=1
-    }
-    return toppingsPrice
-  }
-
   Pizza.prototype.priceCalc = function(){
     let sizePrice
-    let totalPrice = this.toppingsPriceCalc()
+    let totalPrice = this.toppings.length
     switch(this.size){
       case "Small":
         sizePrice = 10
@@ -63,7 +54,7 @@ $(document).ready(function() {
     let pizzaOrder = new Pizza($("input:radio[name=size]:checked").val(), toppings())
     let price = pizzaOrder.priceCalc()
     $(".sizeChoice").append(`<li>${pizzaOrder.size} ($${price[0]})</li>`)
-    $("#toppings").append(` ($${pizzaOrder.toppingsPriceCalc()})`)
+    $("#toppings").append(` ($${pizzaOrder.toppings.length})`)
     showCheckoutToppings(pizzaOrder.toppings)
     $("#total").append(` $${price[1]}`)
     $(".orderSize").text(pizzaOrder.size)
