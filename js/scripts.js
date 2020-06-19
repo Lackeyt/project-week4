@@ -31,7 +31,7 @@
     return [sizePrice, totalPrice]
   };
 
-  
+  //User Interface
   function toppings(){
     let pizzaToppings = []
     $("input:checkbox[name=topping]:checked").each(function(i){
@@ -52,21 +52,22 @@ $(document).ready(function() {
     let pizzaOrder = new Pizza($("input:radio[name=size]:checked").val(), toppings())
     let price = pizzaOrder.priceCalc()
 
-    console.log(price)
-
-    
     $(".sizeChoice").append(`<li>${pizzaOrder.size} ($${price[0]})</li>`)
     $("#toppings").append(` ($${pizzaOrder.toppingsPriceCalc()})`)
     showToppings(pizzaOrder.toppings)
     $("#total").append(` $${price[1]}`)
-    $("#checkout").show()
-    $("#pizzaOptions").hide()
+    $("#checkout").toggle()
+    $("#pizzaOptions").toggle()
   })
 
   $("#goBack").click(function(){
     event.preventDefault()
-    $("#checkout").hide()
-    $("pizzaOptions").show()
+    $(".sizeChoice").empty()
+    $("#toppings").text("Toppings")
+    $(".toppingsChoice").empty()
+    $("#total").text("Total: ")
+    $("#checkout").toggle()
+    $("#pizzaOptions").show()
   })
 
   $("#order").click(function(){
