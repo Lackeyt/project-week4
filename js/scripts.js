@@ -49,7 +49,7 @@
   function orderConfirmedToppings(pizzaOrder){
     let output
     if (pizzaOrder.toppings.length === 0) {
-      output = "nothing but sadness"
+      output = "nothing but cheese and sadness"
     } else {
       output = pizzaOrder.toppings.join(", ")
     }
