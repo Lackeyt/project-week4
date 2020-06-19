@@ -1,6 +1,18 @@
+body {
+  background: url(C:/Users/lacke/Desktop/Epicodus/project-week4/img/pizza.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .jumbotron{
   text-align: center;
-  background-color: 
+  background-color: rgba(165, 165, 165, 0.5);
+  color: white;
+}
+
+.well {
+  background-color: rgba(165, 165, 165, 0.5);
+  color: white;
 }
 
 .flex-outer, 
