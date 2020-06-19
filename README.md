@@ -7,7 +7,7 @@
 
 ## Description
 
-_{detailed desc}_
+_The landing page lets the user select the pizza size (default small) and toppings. When submitted, the selected size and array of toppings are added as properties to a Pizza object in JS. Using a prototype method on the Pizza object, the price is calculated based on the size and number of toppings. The user is then brought to a confirmation page where they can see a price breakdown and a list of their selections. They can either click "go back" to modify their selections, or "confirm order" to submit the order. When confirmed, a confirmation message is displayed listing their order in plain english._
 
 ## Behaviors
 
@@ -17,9 +17,8 @@ _{detailed desc}_
 | User selects any number of toppings, they are listed in the output | `[x] Olives, [x] Pepperoni, [x] Sausage, [x] Bacon` | "Olives, Pepperoni, Sausage, Bacon |
 | Small pizzas cost $10, medium cost $15, large cost $20 | `[x] Small` | $10 |
 | Additional toppings are each $1 | `[x] Small` & `[x] Sausage, [x] Bacon` | $12 |
-| Behavior | input | output |
-| Behavior | input | output |
-| Behavior | input | output |
+| "go back" button on the checkout page brings user back to the selection screen | n/a | n/a |
+| "complete order" button on the checkout page brings user to the order confirmed page | n/a | n/a |
 
 ## Setup/Installation Requirements
 
@@ -44,7 +43,7 @@ _{detailed desc}_
 
 ##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Directly in your Browser:
 
-* Navigate to {GH Pages URL} in your web browser.
+* Navigate to lackeyt.github.io/project-week4/index.html in your web browser.
 
 ## Known Bugs
 
@@ -65,9 +64,6 @@ _{detailed desc}_
 * Javascript
 * JQuery
 
-## Resources:
-
-* 
 
 ### License
 

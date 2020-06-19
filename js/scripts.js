@@ -5,6 +5,7 @@
     this.toppings = toppings;
   };
 
+  
   Pizza.prototype.toppingsPriceCalc = function(){
     let toppingsPrice = 0
     for (i=0; i < this.toppings.length; i++){
