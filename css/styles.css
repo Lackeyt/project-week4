@@ -1,5 +1,6 @@
 .jumbotron{
   text-align: center;
+  background-color: 
 }
 
 .flex-outer, 
@@ -27,6 +28,21 @@
   flex: 3 0 200px;
   padding: 0;
 }
+
+#checkout {
+  display: none;
+}
+
+.sizeChoice,
+.toppingsChoice {
+  list-style-type: none;
+  padding: 0;
+}
+
+#checkout > ul > li {
+  font-weight: bold;
+}
+
 
 
 

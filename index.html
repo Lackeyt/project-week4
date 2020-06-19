@@ -87,6 +87,21 @@
         <button type="submit" class="btn btn-primary">Proceed to Checkout</button>
       </ul>
     </form>
+    <div id="checkout" class="well">
+      <h3>Size</h3>
+      <ul class="sizeChoice">
+      </ul>
+      <h3 id="toppings">Toppings</h3>
+      <ul class="toppingsChoice">
+      </ul>
+      <h3 id="total">Total: </h3>
+      <button type="button" id="goBack" class="btn btn-primary">Go Back</button>
+      <button type="button" id="order" class="btn btn-primary">Complete Order</button>
+    </div>
+    <div id="orderConfirmed" class="well">
+      <h3>Thank you for your order</h3>
+      <p>Your <span class="orderSize"></span> pizza with <span class="orderToppings"></span> is on the way!</p>
+    </div>
   </div>
 </body>
 </html>

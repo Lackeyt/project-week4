@@ -14,20 +14,21 @@
   }
 
   Pizza.prototype.priceCalc = function(){
-    let price
+    let sizePrice
+    let totalPrice = this.toppingsPriceCalc()
     switch(this.size){
       case "Small":
-        price = 10
+        sizePrice = 10
         break;
       case "Medium":
-        price = 15
+        sizePrice = 15
         break;
       case "Large":
-        price = 20;
+        sizePrice = 20;
         break;
     };
-    price += this.toppingsPriceCalc()
-    return price
+    totalPrice += sizePrice
+    return [sizePrice, totalPrice]
   };
 
   
@@ -39,15 +40,38 @@
     return pizzaToppings
   }
 
+  function showToppings(pizzaToppings){
+    pizzaToppings.forEach(
+      element => $(".toppingsChoice").append(`<li>${element}</li>`)
+    )
+  }
   
 $(document).ready(function() {
   $("#pizzaOptions").submit(function(){
     event.preventDefault()
-    let pizzaSize = $("input:radio[name=size]:checked").val()
-    let pizzaToppings = toppings()
-    let pizzaOrder = new Pizza(pizzaSize, pizzaToppings)
+    let pizzaOrder = new Pizza($("input:radio[name=size]:checked").val(), toppings())
     let price = pizzaOrder.priceCalc()
 
+    console.log(price)
+
+    
+    $(".sizeChoice").append(`<li>${pizzaOrder.size} ($${price[0]})</li>`)
+    $("#toppings").append(` ($${pizzaOrder.toppingsPriceCalc()})`)
+    showToppings(pizzaOrder.toppings)
+    $("#total").append(` $${price[1]}`)
+    $("#checkout").show()
     $("#pizzaOptions").hide()
+  })
+
+  $("#goBack").click(function(){
+    event.preventDefault()
+    $("#checkout").hide()
+    $("pizzaOptions").show()
+  })
+
+  $("#order").click(function(){
+    event.preventDefault()
+    $("#checkout").hide()
+    $("#orderConfirmed").show()
   })
 })
