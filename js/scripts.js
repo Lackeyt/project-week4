@@ -57,12 +57,16 @@ $(document).ready(function() {
     event.preventDefault()
     let pizzaOrder = new Pizza($("input:radio[name=size]:checked").val(), toppings())
     let price = pizzaOrder.priceCalc()
+
+    //update checkout screen elements
     $(".sizeChoice").append(`<li>${pizzaOrder.size} ($${price[0]})</li>`)
     $("#toppings").append(` ($${pizzaOrder.toppings.length})`)
     showCheckoutToppings(pizzaOrder.toppings)
     $("#total").append(` $${price[1]}`)
+    //update order confirmation screen elements
     $(".orderSize").text(pizzaOrder.size)
     $(".orderToppings").text(orderConfirmedToppings(pizzaOrder))
+    //toggle displays
     $("#checkout").toggle()
     $("#pizzaOptions").toggle()
   })
@@ -70,19 +74,22 @@ $(document).ready(function() {
   //reverts back to submissions screen and clears checkout output
   $("#goBack").click(function(){
     event.preventDefault()
+    //reset checkout screen elements
     $(".sizeChoice").empty()
     $("#toppings").text("Toppings")
     $(".toppingsChoice").empty()
     $("#total").text("Total: ")
+    //toggle displays
     $("#checkout").toggle()
-    $("#pizzaOptions").show()
+    $("#pizzaOptions").toggle()
   })
 
   //confirms order and proceeds to order confirmation screen
   $("#order").click(function(){
     event.preventDefault()
-    $("#checkout").hide()
-    $("#orderConfirmed").show()
+    //toggle displays
+    $("#checkout").toggle()
+    $("#orderConfirmed").toggle()
   })
 
   //reloads the page
