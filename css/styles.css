@@ -1,5 +1,5 @@
 body {
-  background: url(C:/Users/lacke/Desktop/Epicodus/project-week4/img/pizza.jpg);
+  background: url(./../img/pizza.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
